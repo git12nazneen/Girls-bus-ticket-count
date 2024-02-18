@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Girls bus ticket count</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="font">
     <!-- navbar -->
     <header class="container mx-auto">
     <div class="navbar bg-base-100">
@@ -35,12 +37,100 @@
           </ul>
         </div>
         <div class="navbar-end">
-          <a class="btn">Button</a>
+            <button class="btn btn-outline btn-success bg-green-300 text-black">Bus <i class="fa-solid fa-bus"></i></button>
         </div>
       </div>
     </header>
     <!-- navbar end -->
+    <!-- banner -->
+    <section class="container mx-auto">
+        <div class="hero rounded-2xl min-h-screen" style="background-image: url(./images/banner.png);">
+            <div class="hero-overlay opacity-10 rounded-2xl"></div>
+            <div class="hero-content text-center text-neutral-content">
+              <div class="max-w-md">
+                <h1 class="mb-5 text-4xl font-bold text-white">End-to-End Travel with </h1>
+                <h1 class="mb-5 text-4xl font-bold text-green-500">Girls Paribahan </h1>
+                <p class="mb-5">These services might have female drivers or attendants and could operate on specific routes or schedules tailored to women's needs.</p>
+            
+                <button class="btn btn-success">Buy Ticket</button>
+              </div>
+            </div>
+          </div>
+    </section>
+    <!-- banner end -->
+    <!-- offer -->
+    <section class="container mx-auto my-10 lg:mt-14 lg:mb-2 text-center lg:mx-10 ">
+        <h3 class="text-xl text-center lg:text-4xl font-extrabold">Best offer for you</h3>
+    </section>
+     <section class="container mx-auto my-24 lg:mt-5 m-4 lg:mx-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mt-5 lg:mx-0 mx-5">
+            <div class="hero p-2 rounded-lg border bg-yellow-400">
+               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-1">
+                <div class="p-10 border-dashed border-r-2"> 
+                    <h2 class="text-2xl font-extrabold">15% OFF</h2>
+                    <h2 class="text-xl font-semibold">on your next purchase</h2>
+                    <h2 class="font-semibold">used by january 2024</h2>
+                </div>
+                
+                <div class="p-10"> 
+                    <h2 class="text-2xl font-extrabold">New15</h2>
+                    <h2 class="font-semibold">Coupon code</h2>
+                </div>
+               </div>
+                </div>
+                <div class="hero p-2 rounded-lg border bg-pink-500">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-1">
+                        <div class="p-10 border-dashed border-r-2"> 
+                            <h2 class="text-2xl font-extrabold">20% OFF</h2>
+                            <h2 class="text-xl font-semibold">on your next purchase</h2>
+                            <h2 class="font-semibold">used by january 2024</h2>
+                        </div>
+                        <div class="p-10"> 
+                            <h2 class="text-2xl font-extrabold">Couple 20</h2>
+                            <h2 class="font-semibold">Coupon code</h2>
+                        </div>
+                       </div>
+                </div>
+              </div>
+        </div>
+        <div class="justify-center text-center pt-10"><button class="btn btn-outline btn-accent">See all offers</button></div>
+     </section>
+    <!-- offer end-->
 
+    <!-- top footer start -->
+    <footer class="footer p-10  bg-slate-900  text-neutral-content">
+      
+        <div class="flex flex-col lg:flex-row gap-12 mt-12">
+            <div class="flex-1 w-full">
+                <h1 class="text-3xl">Girls-paribihon</h1>
+                <p>This services are implemented to address safety <br> concerns and provide a more secure environment for female passengers.
+                </p>  
+                </div> 
+             
+
+            <div class="flex-1 text-end pl-80">
+                <h2 class="text-2xl">Download our app</h2>
+                <img class="pl-72" src="./images/playstore.png" alt="">
+             </div>
+        </div>
+      </footer>
+    <!-- top footer end -->
+    <!-- bottom footer start -->
+    <footer class="footer px-10 py-4 border-t text-base-content border-base-300 bg-slate-900 text-white">
+        <aside class="items-center grid-flow-col">
+          
+          <p>
+            @all rights reserved, Girls-Ticket services limited.2024  </p>
+        </aside> 
+        <nav class="md:place-self-center md:justify-self-end">
+          <div class="grid grid-flow-col gap-4">
+            <a>Terms & condition</a>
+            <a> Return & refund policy</a>
+            <a>Privacy polic</a>
+          </div>
+        </nav>
+      </footer>
+    <!-- bottom footer end -->
     <script src="./script/script.js"></script>
 </body>
 </html>
