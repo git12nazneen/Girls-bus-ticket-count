@@ -245,24 +245,38 @@
               <div class="p-5">
                 <h1 class="text-2xl text-left pb-2 border-b-2 border-gray-400 border-dashed">Select your seat</h1>
                 <div class="bg-slate-300 py-5 my-5 rounded-2xl">
-                  <div class="flex pb-10 mb-3">
+                  <!-- <div class="flex pb-10 mb-3">
                     <div class="flex-1 h-16 ">
                      <p class="font-extrabold text-black pb-3"> Seat <span id="booked" class="bg-green-500 rounded-2xl p-2">0</span></p>
-                     <!-- <p class="py-2"> Seat</p> -->
-                 
+                     <p class="py-2"> Seat</p> -->
+                      <!-- <div id="seat-number"></div>
                     </div>
                     <div class="shrink-0 h-16 w-32 ">
-                     <p class="font-extrabold text-black pb-3"> Class</p>
+                     <p class="font-extrabold text-black pb-3"> Class</p> -->
                      <!-- <p class="py-2">Economy</p> -->
-                    
+                     <!-- <div id="seat-number"></div> -->
                    
-                    </div>
+                    <!-- </div>
                     <div class="flex-1 h-16 ">
                       <p class="font-extrabold text-black pb-3"> Price</p>
-                      <!-- <p class="py-2">550</p> -->
+                      <div id="seat-number"></div> -->
                      
-                  </div>
-                </div>
+                  <!-- </div>
+                </div> --> 
+
+                <table id="productTable">
+                  <thead>
+                      <tr>
+                          <th> Seat <span id="booked" class="bg-green-500 rounded-full py-1 px-2">0</span></p>
+                            <p class="py-2"></th>
+                          <th>Quality</th>
+                          <th>Price</th>
+                      </tr>
+                  </thead>
+                  <tbody id="seatBody">
+                      <!-- Product rows will be inserted here dynamically -->
+                  </tbody>
+              </table>
                 <hr>
                   <div class="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-2 px-8 py-2">
                     <div class="text-start font-extrabold text-black">Total Price</div>
