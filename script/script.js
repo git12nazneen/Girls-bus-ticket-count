@@ -13,8 +13,11 @@ for (const btn of keyButtons) {
         btn.disabled = true;
         if(btnParse === 36) {
             btn.disabled = true;
+            alert('Dont book seat now, you have already selected 4 seat')
             return
-        }        
+        }       
+        
+        // 
         setBackGroundColorElement(e.target.id);
         // seat price
         const seatPriceElement = document.getElementById('seatPrice');
@@ -60,15 +63,46 @@ for (const btn of keyButtons) {
 // coupon 
 
 const coupon = document.getElementById('coupon-btn');
-// console.log(coupon);
 coupon.addEventListener('click', function (){
-  console.log('click')
-//   get value
+//   console.log('click')
+  const couponInput = document.getElementById('coupon-text').value;
+//   console.log(couponInput)
 
-const couponInput = document.getElementById('coupon-text').value;
-// console.log(couponInput)
-     
-// if(couponInput.value === "NEW15")
+if (couponInput === "NEW15") {
+    const discountAmount = (totalPrice * 15) / 100;
+    const newPrice = totalPrice - discountAmount;
+
+    // Update the value of the coupon input
+    document.getElementById('coupon-text').value = newPrice.toFixed(2);
+
+    // Calculate the new grand total after applying the discount
+    const newGrandTotal = totalPrice - discountAmount;
+
+    // Update the displayed grand total
+    const grandTotalElement = document.getElementById('grand-total');
+    grandTotalElement.innerText = newGrandTotal.toFixed(2);
+
+   
+    // console.log("Discount applied successfully.");
+}
+else if(couponInput === "Couple20"){
+    const discountAmount = (totalPrice * 20) / 100;
+    const newPrice = totalPrice - discountAmount;
+
+    // Update the value of the coupon input
+    document.getElementById('coupon-text').value = newPrice.toFixed(2);
+   
+    // Calculate the new grand total after applying the discount
+    const newGrandTotal = totalPrice - discountAmount;
+
+    // Update the displayed grand total
+    const grandTotalElement = document.getElementById('grand-total');
+    grandTotalElement.innerText = newGrandTotal.toFixed(2);
+
+}
+else{
+    alert('choose 4')
+}
 
 }
 )
