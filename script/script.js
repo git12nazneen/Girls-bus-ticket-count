@@ -13,13 +13,15 @@ for (const btn of keyButton) {
 
     //  seat price
     const seatPriceElement = document.getElementById('seatPrice');
-    console.log(seatPriceElement);
+    // console.log(seatPriceElement);
     const priceText = seatPriceElement.textContent.trim();
     const priceValue = parseFloat(priceText);
-    console.log('ppp', priceValue)
+    // console.log('ppp', priceValue)
     // calculate
     totalPrice += priceValue;
     document.getElementById('totalPrice').innerText = totalPrice.toFixed(2)
+    
+    
     //  seat kome 1ta kore
   
 const currentSeat = document.getElementById('current-seats');
@@ -32,6 +34,23 @@ const currentSeat = document.getElementById('current-seats');
     // console.log(newScore)
     currentSeat.innerText = newScore;
 
+// available
+
+    const keyButton = document.querySelectorAll('.kbd')
+    for (let i = 0; i < keyButton.length; i++) {
+       keyButton[i].addEventListener('click', function (){
+         let currentSeat = parseInt(document.getElementById('current-seats').innerText);
+         if(currentSeat > 0){
+            currentSeat--;
+            document.getElementById('current-seats').innerText = currentSeat;
+        }
+       });
+        
+    }
+
+  
+
+
     // booking seat
     const bookingSeatElement = document.getElementById('booked');
     const currentBookSeat = bookingSeatElement.innerText;
@@ -41,20 +60,6 @@ const currentSeat = document.getElementById('current-seats');
     // console.log(newBooked);
     bookingSeatElement.innerText = newBooked;
 
-    // append child
-//    const tableBody = document.getElementById('seatBody')
-//    console.log(tableBody)
-//    tableBody.innerHTML = '';
-
-//    const row = document.createElement('tr');
-//     console.log(row)
-//     row.innerHTML = `
-//     <td>${e.target.id}</td>
-//     <td>Economy</td>
-//     <td>550</td>
-//     `
-    
-//     tableBody.appendChild(row);
 
 }
    
@@ -62,7 +67,7 @@ const currentSeat = document.getElementById('current-seats');
 
 
 }
-
+// append child
 const allKeys = document.querySelectorAll("#all-keys .kbd");
 
 allKeys.forEach(key => {
@@ -79,3 +84,33 @@ allKeys.forEach(key => {
         tableBody.appendChild(newRow);
     });
 });
+
+
+    
+let selectedSeatNumber = 0;
+//    kkkkk
+for (let i = 0; i < keyButton.length; i++) {
+   
+    keyButton[i].addEventListener('click', function (){
+      if(!this.disabled){
+        let currentSeat = parseInt(document.getElementById('current-seats').innerText);
+        if(currentSeat > 0 && selectedSeatNumber < 5){
+            selectedSeatNumber++;
+            this.disabled = true;
+            if(selectedSeatNumber === 4){
+                alert('You have selected 4 seats');
+                for (let j = 0;j < keyButton.length;j++) {
+              
+                    if(!keyButton[j].disabled){
+                        keyButton[j].disabled = true;
+                    }
+                }
+                    
+                }
+            }
+        }
+      }
+    )
+}
+    
+// uuuuuu
