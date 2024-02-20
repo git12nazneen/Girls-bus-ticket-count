@@ -11,6 +11,15 @@ for (const btn of keyButton) {
      console.log(e.target.innerText)
      setBackGroundColorElement(e.target.id);
 
+    //  seat price
+    const seatPriceElement = document.getElementById('seatPrice');
+    console.log(seatPriceElement);
+    const priceText = seatPriceElement.textContent.trim();
+    const priceValue = parseFloat(priceText);
+    console.log('ppp', priceValue)
+    // calculate
+    totalPrice += priceValue;
+    document.getElementById('totalPrice').innerText = totalPrice.toFixed(2)
     //  seat kome 1ta kore
   
 const currentSeat = document.getElementById('current-seats');
