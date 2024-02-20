@@ -9,6 +9,7 @@ for (const btn of keyButtons) {
        
         const btnDisabled = document.getElementById('current-seats').innerText;
         const btnParse = parseFloat(btnDisabled)
+        // console.log(btnParse)
         btn.disabled = true;
         if(btnParse === 36) {
             btn.disabled = true;
@@ -34,7 +35,9 @@ for (const btn of keyButtons) {
         const bookingSeatElement = document.getElementById('booked');
         const currentBookSeat = bookingSeatElement.innerText;
         const newBooked = parseInt(currentBookSeat) + 1;
+        console.log(newBooked)
         bookingSeatElement.innerText = newBooked;
+        // console.log(bookingSeatElement)
 
         // append child
         const tableBody = document.getElementById('seatBody');
@@ -49,3 +52,29 @@ for (const btn of keyButtons) {
        
     });
 }
+
+
+// coupon 
+
+const coupon = document.getElementById('coupon-btn');
+// console.log(coupon);
+coupon.addEventListener('click', function (){
+  console.log('click')
+//   get value
+
+const couponElement = document.getElementById('coupon-text').value;
+console.log(couponElement)
+    if(newBooked === 4){
+      
+    }
+    else{
+        alert('book 4 atleast')
+    }
+}
+)
+
+// modal continue
+const modalContinueBtn = document.getElementById('modalContinueBtn');
+modalContinueBtn.addEventListener('click', () =>{
+    window.location.reload();
+})
