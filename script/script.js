@@ -62,50 +62,103 @@ for (const btn of keyButtons) {
 
 // coupon 
 
-const coupon = document.getElementById('coupon-btn');
-coupon.addEventListener('click', function (){
-//   console.log('click')
-  const couponInput = document.getElementById('coupon-text').value;
-//   console.log(couponInput)
+const coupon = document.getElementById("coupon-btn");
+coupon.addEventListener("click", function () {
+  const couponInput = document
+    .getElementById("coupon-text")
+    .value.split(" ")
+    .join(" ")
+    .toUpperCase();
+  console.log(couponInput);
 
-if (couponInput === "NEW15") {
-    const discountAmount = (totalPrice * 15) / 100;
-    const newPrice = totalPrice - discountAmount;
+  const booked_Seat = document.getElementById("booked").innerText;
+  const bookedSeat = parseInt(booked_Seat);
+  console.log(typeof bookedSeat);
+if (bookedSeat === 4) {
+    const discountPrice = document.getElementById("discount-price");
+    const discountPercentage = { NEW15: 0.15, COUPLE20: 0.2 }[couponInput];
+    if (discountPercentage !== undefined) {
+        discountPrice.innerText = totalPrice * discountPercentage;
+      const discountAmmount = parseInt(discountPrice.innerText);
+      document.getElementById("grand-total").innerText =
+        totalPrice - discountAmmount;
+        const couponField = document.getElementById("coupon-text");
+      couponField.style.display = "none";
+      coupon.style.display = "none";
+    } else {
+      alert("Invalid Coupon code. Please enter a valid code");
+    }
+  }
+});
 
-    // Update the value of the coupon input
-    document.getElementById('coupon-text').value = newPrice.toFixed(2);
 
-    // Calculate the new grand total after applying the discount
-    const newGrandTotal = totalPrice - discountAmount;
 
-    // Update the displayed grand total
-    const grandTotalElement = document.getElementById('grand-total');
-    grandTotalElement.innerText = newGrandTotal.toFixed(2);
+
+
+// const coupon = document.getElementById('coupon-btn');
+// coupon.addEventListener('click', function (){
+// //   console.log('click')
+//   const couponInput = document.getElementById('coupon-text').value.split(' ').join().toUpperCase();
+// //   console.log(couponInput)
+
+//   const bookedSeat = document.getElementById('booked').innerText;
+// //   console.log(bookedSeat);
+//   const bookSeatElement = parseInt(bookedSeat);
+// //   console.log(typeof bookSeatElement);
+
+//   if(bookedSeat === 4){
+//     // console.log('seat booking');
+//     const discountPrice = document.getElementById('discount-price');
+//     const discountPercentage = {NEW15 : 0.15, COUPLE20: 0.2}[couponInput];
+//     if(discountPercentage !== undefined){
+//         discountPrice.innerText = totalPrice * discountPercentage;
+//         // const discountAmount = parseInt(discountPrice.innerText)
+//         // console.log(discountAmount)
+//         const discountAmmount = parseInt(discountPrice.innerText);
+//         document.getElementById("grand-total").innerText = totalPrice - discountAmmount;
+
+//         const couponInput = document.getElementById('coupon-text');
+//         console.log(couponInput.value)
+//     }
+//   }
+// if (couponInput === "NEW15") {
+//     const discountAmount = (totalPrice * 15) / 100;
+//     const newPrice = totalPrice - discountAmount;
+
+//     // Update the value of the coupon input
+//     document.getElementById('coupon-text').value = newPrice.toFixed(2);
+
+//     // Calculate the new grand total after applying the discount
+//     const newGrandTotal = totalPrice - discountAmount;
+
+//     // Update the displayed grand total
+//     const grandTotalElement = document.getElementById('grand-total');
+//     grandTotalElement.innerText = newGrandTotal.toFixed(2);
 
    
-    // console.log("Discount applied successfully.");
-}
-else if(couponInput === "Couple20"){
-    const discountAmount = (totalPrice * 20) / 100;
-    const newPrice = totalPrice - discountAmount;
+//     // console.log("Discount applied successfully.");
+// }
+// else if(couponInput === "Couple20"){
+//     const discountAmount = (totalPrice * 20) / 100;
+//     const newPrice = totalPrice - discountAmount;
 
-    // Update the value of the coupon input
-    document.getElementById('coupon-text').value = newPrice.toFixed(2);
+//     // Update the value of the coupon input
+//     document.getElementById('coupon-text').value = newPrice.toFixed(2);
    
-    // Calculate the new grand total after applying the discount
-    const newGrandTotal = totalPrice - discountAmount;
+//     // Calculate the new grand total after applying the discount
+//     const newGrandTotal = totalPrice - discountAmount;
 
-    // Update the displayed grand total
-    const grandTotalElement = document.getElementById('grand-total');
-    grandTotalElement.innerText = newGrandTotal.toFixed(2);
+//     // Update the displayed grand total
+//     const grandTotalElement = document.getElementById('grand-total');
+//     grandTotalElement.innerText = newGrandTotal.toFixed(2);
 
-}
-else{
-    alert('choose 4')
-}
+// }
+// else{
+//     alert('choose 4')
+// }
 
-}
-)
+// }
+// )
 
 // modal continue
 const modalContinueBtn = document.getElementById('modalContinueBtn');

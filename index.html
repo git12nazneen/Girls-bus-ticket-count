@@ -274,9 +274,16 @@
                     <div class="join">
                       <input type="text" id="coupon-text" placeholder="Have any coupon?
                       " class="input input-bordered join-item" /> 
-                      <button class="btn btn-success join-item"> <span id="coupon-btn">Apply</span> </button>
+                      <button id="coupon-btn" class="btn btn-success join-item"> Apply </button>
                     </div>
                   </fieldset>
+
+                  <div id="discountContainer">
+                    <div class="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-2 px-8 py-2">
+                      <div class="text-start font-extrabold text-black">Discount</div>
+                      <div class="text-end font-extrabold text-black">BDT <span id="discount-price">0</span> </div>
+                    </div>
+                  </div>
                   <div class="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-2 px-8 py-2">
                     <div class="text-start font-extrabold text-black">Grand Total</div>
                     <div class="text-end font-extrabold text-black">BDT <span id="grand-total">0</span> </div>
