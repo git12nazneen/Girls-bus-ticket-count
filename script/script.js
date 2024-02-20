@@ -24,6 +24,9 @@ for (const btn of keyButtons) {
         // calculate total price
         totalPrice += priceValue;
         document.getElementById('totalPrice').innerText = totalPrice.toFixed(2);
+        const grandTotal = totalPrice;
+        document.getElementById('grand-total').innerText = grandTotal.toFixed(2);
+
 
         // decrease available seats
         const currentSeat = document.getElementById('current-seats');
@@ -62,14 +65,11 @@ coupon.addEventListener('click', function (){
   console.log('click')
 //   get value
 
-const couponElement = document.getElementById('coupon-text').value;
-console.log(couponElement)
-    if(newBooked === 4){
-      
-    }
-    else{
-        alert('book 4 atleast')
-    }
+const couponInput = document.getElementById('coupon-text').value;
+// console.log(couponInput)
+     
+// if(couponInput.value === "NEW15")
+
 }
 )
 
